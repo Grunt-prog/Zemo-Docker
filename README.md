@@ -36,7 +36,7 @@ Before you can run the application, make sure you have the following dependencie
 1. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/Grunt-prog/ScoresTracker.git
+    https://github.com/Grunt-prog/Zemo.git
     ```
 
 
