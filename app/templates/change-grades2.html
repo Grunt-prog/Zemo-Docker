@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scores</title>
+    <link rel="stylesheet" href="grades.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='change-grades.css') }}">
+    <style>
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a href="#" class="name">Scores Tracker</a>
+            <a href="/student-details" class="pages">Student Details</a>
+            <a href="/change-grades" class="pages">Change Grades</a>
+            <a href="/admin" class="pages">Home</a>
+        </nav> 
+    </header>   
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form method="POST" action="{{ url_for('change_grades2') }}">
+                <h2>Add Subject Wise Grade</h2>
+                <div class="form-fields">
+                    <input type="text" placeholder="Roll No" name="rollno-sub">
+                    <input type="text" placeholder="Semester" name="sem-sub">
+                    <input type="text" placeholder="Subject Name" name="name-sub">
+                    <input type="text" placeholder="Grade" name="grade-sub">
+                </div>
+                <button class="primary-btn" type="submit">Submit</button>
+            </form>
+            <form method="POST" action="{{ url_for('change_grades3') }}">
+                <h2>Add Semester Wise Grade</h2>
+                <div class="form-fields">
+                    <input type="text" placeholder="Roll No" name="rollno-sem">
+                    <input type="text" placeholder="Semester" name="sem-sem">
+                    <input type="text" placeholder="GPA" name="gpa-sem">
+                </div>
+                <button class="secondary-btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <button class="styled-button4" onclick="window.location.href = '/'">Logout</button>
+        <p>{{ msg }}</p>
+    
+
+</body>
+</html>

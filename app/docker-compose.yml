@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: mysql:5.7
+
+    environment:
+      MYSQL_HOST: 'db'
+      MYSQL_ROOT_PASSWORD: '123'
+      MYSQL_DATABASE: student1
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+volumes:
+  mysql-data:
+
+networks:
+  app-network:
+    driver: bridge
