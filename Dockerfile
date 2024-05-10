@@ -5,11 +5,10 @@ FROM python:3.8-slim
 ENV APP_HOME=/app \
     TEMPLATES_HOME=/app/templates \
     MYSQLCLIENT_CFLAGS="-I/usr/include/mysql" \
-    MYSQLCLIENT_LDFLAGS="-L/usr/lib/x86_64-linux-gnu -lmysqlclient" \
-    NAME=World
+    MYSQLCLIENT_LDFLAGS="-L/usr/lib/x86_64-linux-gnu -lmysqlclient"
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Install necessary system packages
 RUN apt-get update && \
@@ -20,7 +19,7 @@ RUN apt-get update && \
 COPY . .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Expose port 5000
 EXPOSE 5000
