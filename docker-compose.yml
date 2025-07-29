@@ -13,13 +13,12 @@ services:
 
   db:
     image: mysql:5.7
-
     environment:
-      MYSQL_HOST: 'db'
       MYSQL_ROOT_PASSWORD: '123'
       MYSQL_DATABASE: student1
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql:ro
     networks:
       - app-network
 
