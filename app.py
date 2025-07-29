@@ -10,9 +10,9 @@ app.logger.setLevel(logging.DEBUG)
 
 app.secret_key = '1101'  # Set a secret key for session management
 
-app.config['MYSQL_HOST'] = 'localhost'  # Replace with your MySQL host
+app.config['MYSQL_HOST'] = 'db'  # Replace with your MySQL host
 app.config['MYSQL_USER'] = 'root'  # Replace with your MySQL username
-app.config['MYSQL_PASSWORD'] = 'AmmuRitu@19a'  # Replace with your MySQL password
+app.config['MYSQL_PASSWORD'] = '123'  # Replace with your MySQL password
 app.config['MYSQL_DB'] = 'student1'  # Replace with your MySQL database name
 
 mysql = MySQL(app)
